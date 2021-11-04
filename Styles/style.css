@@ -1,0 +1,12 @@
+.modal {
+    opacity: 0;
+    visibility: hidden;
+    
+    
+}
+
+.open {
+    visibility: visible;
+    opacity: 1;
+    
+}

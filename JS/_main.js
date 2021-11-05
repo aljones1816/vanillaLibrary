@@ -1,8 +1,16 @@
-let id = 0;
+let myLibrary = [];
 
-let myLibrary = [
+let id;
+const setId = function () {
+    if (Math.max.apply(Math, myLibrary.map(function (o) { return o.id; })) > -1) {
+        id = Math.max.apply(Math, myLibrary.map(function (o) { return o.id; })) + 1;
+    } else {
+        id = 0;
+    }
+}
 
-];
+setId();
+
 
 function Book(title, author, pages, status, id) {
     this.id = id;
@@ -22,7 +30,6 @@ function addBookToLibrary(book) {
     myLibrary.push(book)
 }
 
-
 function displayBooks(library) {
     libraryContainer = document.getElementById('library');
     libraryContainer.innerHTML = "";
@@ -36,9 +43,16 @@ function displayBooks(library) {
         deleteButton.addEventListener('click', function (e) {
             e.preventDefault();
             deleteBook(parseInt(newDiv.id));
-            
+
         })
-        
+
+        const updateButton = document.createElement('button');
+        updateButton.textContent = 'update status'
+        updateButton.addEventListener('click', function (e) {
+            e.preventDefault();
+            changeStatus(parseInt(newDiv.id));
+        })
+
 
         for (x in arr = [Book.title, Book.author, Book.pages]) {
             const labelStrings = ['Title', 'Author', 'Pages']
@@ -48,7 +62,22 @@ function displayBooks(library) {
             paragraph.appendChild(paragraphText);
             newDiv.appendChild(paragraph);
         }
-            newDiv.append(deleteButton);
+
+        // handle read status
+        const readPara = document.createElement('p');
+        readPara.className = 'readStatus'
+        let readText;
+        if (Book.status) {
+            readText = document.createTextNode("Read")
+        } else {
+            readText = document.createTextNode("Not read")
+        }
+        
+        readPara.appendChild(readText);
+        newDiv.appendChild(readPara);
+
+        newDiv.append(deleteButton);
+        newDiv.append(updateButton);
 
         libraryContainer.appendChild(newDiv);
     }
@@ -70,24 +99,36 @@ function closeModal(event) {
     event.preventDefault();
     const modal = document.getElementById('modal-one');
     modal.classList.remove('open');
+    resetForm();
+
+}
+
+function resetForm() {
+    document.getElementById('bookForm').reset();
 }
 
 const modalSave = document.getElementById('saveBook');
 const modalCancel = document.getElementById('cancelBook');
 
 modalSave.addEventListener('click', function (event) {
-
     const newTitle = document.getElementById('bookTitle').value;
     const newAuthor = document.getElementById('bookAuthor').value;
     const newPages = document.getElementById('bookPages').value;
+    const readStatus = document.getElementById('readStatus').checked;
 
-    const newBook = new Book(newTitle, newAuthor, newPages, false, id);
+    if (newTitle == "") {
+        event.preventDefault();
+        return;
+    } else {
+        const newBook = new Book(newTitle, newAuthor, newPages, readStatus, id);
 
-    addBookToLibrary(newBook);
+        addBookToLibrary(newBook);
 
-    displayBooks(myLibrary);
-    closeModal(event);
-    id++;
+        displayBooks(myLibrary);
+        closeModal(event);
+        id++;
+    }
+
 })
 
 modalCancel.addEventListener('click', function (event) {
@@ -103,4 +144,12 @@ const deleteBook = function (bookID) {
     else {
         return
     }
+}
+
+const changeStatus = function (bookID) {
+    const bookIndex = myLibrary.findIndex(book => book.id == bookID);
+    const currentStatus = myLibrary[bookIndex].status ;
+    myLibrary[bookIndex].status = !currentStatus;
+    
+    displayBooks(myLibrary);
 }

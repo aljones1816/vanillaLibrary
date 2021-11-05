@@ -1,12 +1,72 @@
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+
 .modal {
+    
     opacity: 0;
     visibility: hidden;
+    background-color: green;
+    width: minmax(300px, 1fr);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
+    border: 3px solid black;
     
     
 }
 
+.modal-background {
+
+    visibility: hidden;
+    background-color: rgba(0,0,255,0.5);
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+}
+
+#bookList {
+    list-style-type: none;
+}
+
+.open-background {
+    visibility: visible;
+    
+}
+
 .open {
+    
     visibility: visible;
     opacity: 1;
     
+}
+
+
+
+.card-grid {
+ 
+        display: grid;
+        
+         
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+         
+        grid-auto-columns: columns;
+         
+        gap: 1rem;
+         
+
+}
+
+.bookCard {
+ 
+    border: 2px solid #e7e7e7;
+     
+    border-radius: 4px;
+     
+    padding: .5rem;
+     
 }

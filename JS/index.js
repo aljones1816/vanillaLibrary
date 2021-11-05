@@ -1,9 +1,10 @@
 let myLibrary = [];
-
 let id;
+
 const setId = function () {
-    if (Math.max.apply(Math, myLibrary.map(function (o) { return o.id; })) > -1) {
-        id = Math.max.apply(Math, myLibrary.map(function (o) { return o.id; })) + 1;
+    const maxID = Math.max.apply(Math, myLibrary.map(function (o) { return o.id; }));
+    if ( maxID > -1) {
+        id = maxID + 1;
     } else {
         id = 0;
     }
@@ -93,12 +94,16 @@ modalButton.addEventListener('click', function (event) {
     event.preventDefault();
     const modal = document.getElementById('modal-one');
     modal.classList.add('open');
+    const modalBack = document.getElementById('modal-back');
+    modalBack.classList.add('open-background')
 })
 
 function closeModal(event) {
     event.preventDefault();
     const modal = document.getElementById('modal-one');
     modal.classList.remove('open');
+    const modalBack = document.getElementById('modal-back');
+    modalBack.classList.remove('open-background');
     resetForm();
 
 }

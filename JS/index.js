@@ -1,4 +1,47 @@
-let myLibrary = [];
+let myLibrary = [
+    {
+        title: "test",
+        author: "test",
+        pages: 1,
+        status: false,
+        id:0
+    },
+    {
+        title: "test",
+        author: "test",
+        pages: 1,
+        status: false,
+        id:1
+    },
+    {
+        title: "test",
+        author: "test",
+        pages: 1,
+        status: false,
+        id:2
+    },
+    {
+        title: "test",
+        author: "test",
+        pages: 1,
+        status: false,
+        id:3
+    },
+    {
+        title: "test",
+        author: "test",
+        pages: 1,
+        status: false,
+        id:4
+    },
+    {
+        title: "test",
+        author: "test",
+        pages: 1,
+        status: false,
+        id:5
+    }
+];
 let id;
 
 const setId = function () {
@@ -158,3 +201,9 @@ const changeStatus = function (bookID) {
     
     displayBooks(myLibrary);
 }
+
+const modalBack = document.getElementById('modal-back');
+modalBack.addEventListener('click', function(e) {
+    e.preventDefault();
+    closeModal(e);
+})

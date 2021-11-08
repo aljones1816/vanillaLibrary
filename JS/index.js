@@ -1,44 +1,44 @@
 let myLibrary = [
     {
-        title: "test",
+        title: "test1",
         author: "test",
         pages: 1,
         status: false,
         id:0
     },
     {
-        title: "test",
+        title: "test2",
         author: "test",
         pages: 1,
-        status: false,
+        status: true,
         id:1
     },
     {
-        title: "test",
+        title: "test3",
         author: "test",
         pages: 1,
         status: false,
         id:2
     },
     {
-        title: "test",
+        title: "test4",
         author: "test",
         pages: 1,
-        status: false,
+        status: true,
         id:3
     },
     {
-        title: "test",
+        title: "test5",
         author: "test",
         pages: 1,
         status: false,
         id:4
     },
     {
-        title: "test",
+        title: "test6",
         author: "test",
         pages: 1,
-        status: false,
+        status: true,
         id:5
     }
 ];
@@ -97,15 +97,26 @@ function displayBooks(library) {
             changeStatus(parseInt(newDiv.id));
         })
 
+        // add elements to book cards 
+        const titlePara = document.createElement('h2');
+        titlePara.className = 'book-title';
+        const titleText = document.createTextNode(Book.title);
+        titlePara.appendChild(titleText);
+        newDiv.appendChild(titlePara);
 
-        for (x in arr = [Book.title, Book.author, Book.pages]) {
-            const labelStrings = ['Title', 'Author', 'Pages']
-            const paragraph = document.createElement('p');
-            paragraph.className = labelStrings[x];
-            const paragraphText = document.createTextNode(labelStrings[x] + ': ' + arr[x]);
-            paragraph.appendChild(paragraphText);
-            newDiv.appendChild(paragraph);
-        }
+        const authorPara = document.createElement('p');
+        authorPara.className = 'book-author';
+        const authorText = document.createTextNode("Written by " + Book.author);
+        authorPara.appendChild(authorText);
+        newDiv.appendChild(authorPara);
+
+        const pagesPara = document.createElement('p');
+        pagesPara.className = 'book-pages';
+        const pagesText = document.createTextNode(Book.pages + " pages");
+        pagesPara.appendChild(pagesText);
+        newDiv.appendChild(pagesPara);
+
+
 
         // handle read status
         const readPara = document.createElement('p');

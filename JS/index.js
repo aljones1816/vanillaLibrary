@@ -10,7 +10,7 @@ let myLibrary = [
         title: "Moby Dick",
         author: "Herman Melville",
         pages: 635,
-        status: true,
+        status: false,
         id:1
     },
     {
@@ -24,7 +24,7 @@ let myLibrary = [
         title: "The Wizard of Oz",
         author: "L. Frank Baum",
         pages: 92,
-        status: true,
+        status: false,
         id:3
     },
     {
@@ -38,7 +38,7 @@ let myLibrary = [
         title: "War and Peace",
         author: "Leo Tolstoy",
         pages: 1225,
-        status: true,
+        status: false,
         id:5
     }
 ];
@@ -75,6 +75,18 @@ function addBookToLibrary(book) {
 }
 
 function displayBooks(library) {
+    // show counts of books
+    const totBooksP = document.getElementById('tot-books');
+    const totBooks = library.length;
+    totBooksP.innerText = "Number of books: " + totBooks;
+
+    const readBooksP = document.getElementById('tot-read');
+    const readBooks = (library.filter(function (e) {  // filter function
+        return e.status;
+    })).length;
+    readBooksP.innerText = "Number of books read: " + readBooks;
+
+
     libraryContainer = document.getElementById('library');
     libraryContainer.innerHTML = "";
     library.forEach(Book => {

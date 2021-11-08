@@ -4,6 +4,7 @@
 .header {
     grid-area: header;
     border-bottom: 2px solid lightgray;
+    display: inline-block;
   }
   
 
@@ -27,6 +28,7 @@
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 2rem;
+  margin-right: 1rem;
 }
 
 @media (min-width: 1080px) {
@@ -51,7 +53,7 @@
     
     opacity: 0;
     visibility: hidden;
-    padding: 30px;
+    padding: 10px;
     max-width: 480px;
     margin: 200px auto;
     background: #fff;
@@ -171,3 +173,9 @@
 .book-title, .book-author, .book-pages {
   overflow:hidden;
 }
+
+form  { display: table;      }
+
+label { display: table-cell; padding: 5px; }
+input { display: table-cell; }
+

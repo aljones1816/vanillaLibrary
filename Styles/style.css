@@ -5,6 +5,7 @@
     grid-area: header;
     border-bottom: 2px solid lightgray;
     display: inline-block;
+    text-align: center;
   }
   
 
@@ -42,6 +43,9 @@
         border-bottom: none;
         max-width: 270px;
     }
+    .modal {
+      margin: 200px auto;
+    }
     
     
   }
@@ -55,10 +59,10 @@
     visibility: hidden;
     padding: 10px;
     max-width: 480px;
-    margin: 200px auto;
+    margin: 100px auto;
     background: #fff;
     border-radius: 10px;
-    text-align: center;
+  
 }
 
 .modal-background {
@@ -75,6 +79,7 @@
 
 #bookList {
     list-style-type: none;
+    padding: 0px;
 }
 
 .open-background {
@@ -108,7 +113,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px;
+    margin: 2.5%;
     border-radius:12px;
   }
 
@@ -116,7 +121,17 @@
     background-color: #337535;
   }
 
+  #saveBook {
+    width: 45%;
+  }
+
+  #openModal {
+    width: 95%;
+    
+  }
+
   .cancel-button {
+    width: 45%;
     background-color: #949494; 
     border: none;
     color: white;
@@ -125,7 +140,7 @@
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    margin: 4px;
+    margin: 2.5%;
     border-radius:12px;
   }
 
@@ -174,8 +189,55 @@
   overflow:hidden;
 }
 
-form  { display: table;      }
 
-label { display: table-cell; padding: 5px; }
-input { display: table-cell; }
+
+label { padding: 5px; }
+input[type=text] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+input[type=number] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+
+button {
+  cursor: pointer;
+}
+
+#readStatus {
+	appearance: none;
+	background-color: #fafafa;
+	border: 1px solid #cacece;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05);
+	padding: 9px;
+	border-radius: 3px;
+	display: inline-block;
+	position: relative;
+}
+
+#readStatus:active, .regular-checkbox:checked:active {
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05), inset 0px 1px 3px rgba(0,0,0,0.1);
+}
+
+#readStatus:checked {
+	background-color: #e9ecee;
+	border: 1px solid #adb8c0;
+	box-shadow: 0 2px 4px rgba(0,0,0,0.05), inset 0px -15px 10px -12px rgba(0,0,0,0.05), inset 15px 10px -12px rgba(255,255,255,0.1);
+	color: #99a1a7;
+}
+
+#readStatus:checked:after {
+	content: '\2714';
+	font-size: 14px;
+	position: absolute;
+	top: 0px;
+	left: 3px;
+	color: #99a1a7;
+}
 

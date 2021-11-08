@@ -204,6 +204,11 @@ const changeStatus = function (bookID) {
 
 const modalBack = document.getElementById('modal-back');
 modalBack.addEventListener('click', function(e) {
-    e.preventDefault();
+  
+    const modal = document.getElementById('modal-one')
+    if (modal.contains(e.target)) {
+        return;
+    }
+    
     closeModal(e);
 })

@@ -168,3 +168,6 @@
   }
 
 
+.book-title, .book-author, .book-pages {
+  overflow:hidden;
+}

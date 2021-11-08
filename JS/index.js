@@ -1,43 +1,43 @@
 let myLibrary = [
     {
-        title: "test1",
-        author: "test",
-        pages: 1,
+        title: "Where the Red Fern Grows",
+        author: "Wilson Rawls",
+        pages: 245,
         status: false,
         id:0
     },
     {
-        title: "test2",
-        author: "test",
-        pages: 1,
+        title: "Moby Dick",
+        author: "Herman Melville",
+        pages: 635,
         status: true,
         id:1
     },
     {
-        title: "test3",
-        author: "test",
-        pages: 1,
+        title: "The Fellowship of the Ring",
+        author: "J. R. R. Tolkein",
+        pages: 423,
         status: false,
         id:2
     },
     {
-        title: "test4",
-        author: "test",
-        pages: 1,
+        title: "The Wizard of Oz",
+        author: "L. Frank Baum",
+        pages: 92,
         status: true,
         id:3
     },
     {
-        title: "test5",
-        author: "test",
-        pages: 1,
+        title: "Charlie and the Chocolate Factory",
+        author: "Roald Dahl",
+        pages: 176,
         status: false,
         id:4
     },
     {
-        title: "test6",
-        author: "test",
-        pages: 1,
+        title: "War and Peace",
+        author: "Leo Tolstoy",
+        pages: 1225,
         status: true,
         id:5
     }
@@ -84,12 +84,14 @@ function displayBooks(library) {
 
         const deleteButton = document.createElement('button');
         deleteButton.className = 'delete-button';
-        deleteButton.textContent = 'delete book'
+        deleteButton.textContent = 'X'
         deleteButton.addEventListener('click', function (e) {
             e.preventDefault();
             deleteBook(parseInt(newDiv.id));
 
         })
+
+        newDiv.append(deleteButton);
 
         const updateButton = document.createElement('button');
         updateButton.textContent = 'update status'
@@ -133,7 +135,7 @@ function displayBooks(library) {
         readPara.appendChild(readText);
         newDiv.appendChild(readPara);
 
-        newDiv.append(deleteButton);
+        
         newDiv.append(updateButton);
 
         libraryContainer.appendChild(newDiv);

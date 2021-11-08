@@ -100,6 +100,7 @@ function displayBooks(library) {
             e.preventDefault();
             changeStatus(parseInt(newDiv.id));
         })
+        newDiv.append(updateButton);
 
         // add elements to book cards 
         const titlePara = document.createElement('h2');
@@ -136,7 +137,7 @@ function displayBooks(library) {
         newDiv.appendChild(readPara);
 
         
-        newDiv.append(updateButton);
+        
 
         libraryContainer.appendChild(newDiv);
     }

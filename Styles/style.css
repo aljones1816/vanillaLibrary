@@ -3,8 +3,13 @@
   }
 .header {
     grid-area: header;
+    border-bottom: 2px solid lightgray;
   }
 
+  html {
+        font-family: Arial;
+        
+  }
  
 
 
@@ -22,6 +27,9 @@
       grid-template-columns: 1fr 3fr;
       grid-template-areas:
         "header  content"
+    }
+    .header {
+        border-right: 2px solid lightgray;
     }
   }
 
@@ -69,10 +77,87 @@
 .bookCard {
  
     padding: 30px;
-    max-width: 480px;
-    margin: 10px;
-    background: #fff;
+    max-width: 300px;
+    margin: 50px;
+    background: lightgray;
     border-radius: 10px;
-    border: solid;
-     
+    box-shadow: 10px 10px 4px darkgrey;
+   
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px;
+    border-radius:12px;
+  }
+
+  .cancel-button {
+    background-color: #e7e7e7; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px;
+    border-radius:12px;
+  }
+
+  .delete-button {
+    background-color: #f44336; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px;
+    border-radius:12px;
+  }
+
+  .update-button {
+    background-color: #008CBA; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px;
+    border-radius:12px;
+  }
+
+  input, label {
+    display: inline-block;
+  }
+
+  ul.form {
+    width  : 500px;
+    padding: 0px;
+    margin : 0px;
+    list-style-type: none;
+}
+ul.form li  {
+    width : 500px;
+}
+ul.form li input {
+    width : 200px;
+}
+ul.form li textarea {
+    width : 450px;
+    height: 150px;
+}
+ul.form li.twoColumnPart {
+    float : left;
+    width : 250px;
 }

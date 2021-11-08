@@ -83,6 +83,7 @@ function displayBooks(library) {
         newDiv.className = 'bookCard';
 
         const deleteButton = document.createElement('button');
+        deleteButton.className = 'delete-button';
         deleteButton.textContent = 'delete book'
         deleteButton.addEventListener('click', function (e) {
             e.preventDefault();
@@ -92,6 +93,7 @@ function displayBooks(library) {
 
         const updateButton = document.createElement('button');
         updateButton.textContent = 'update status'
+        updateButton.className = 'update-button';
         updateButton.addEventListener('click', function (e) {
             e.preventDefault();
             changeStatus(parseInt(newDiv.id));

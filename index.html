@@ -8,7 +8,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title></title>
+    <title>vanilla JS Library</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="Styles/style.css">
@@ -25,24 +25,25 @@
             <form id="bookForm">
                 <ul id='bookList'>
                     <li>
-                        <label>Book title: </label>
+                        <label for="bookTitle">Book title: </label>
                         <input type="text" id='bookTitle'>
                     </li>
                     <li>
-                        <label>Author name: </label>
+                        <label for="bookAuthor">Author name: </label>
                         <input type="text" id='bookAuthor'>
                     </li>
                     <li>
-                        <label>Pages: </label>
+                        <label for="bookPages">Pages: </label>
                         <input type="number" id='bookPages'>
                     </li>
-                    <li>
-                        <label>Read:</label>
+                    <li class="checker">
+                        <label for="readStatus">Read:</label>
                         <input type="checkbox" id="readStatus">
                     </li>
                 </ul>
                 <button class="button" id='saveBook'>Save</button>
                 <button class="cancel-button" id='cancelBook'>Cancel</button>
+                
                 
             </form>
             
@@ -53,6 +54,7 @@
 
         <div class="header">
             <h1>My Book Library</h1>
+            
             <button class="button" id=openModal>Add a book</button>
             <div class = "infoCard">
                 <p id="tot-books">Number of books:</p>

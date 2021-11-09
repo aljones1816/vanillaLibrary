@@ -94,9 +94,9 @@ function displayBooks(library) {
         newDiv.id = Book.id;
         newDiv.className = 'bookCard';
 
-        const deleteButton = document.createElement('button');
-        deleteButton.className = 'delete-button';
-        deleteButton.textContent = 'X'
+        const deleteButton = document.createElement('i');
+        deleteButton.className = "delete-button fas fa-window-close";
+        
         deleteButton.addEventListener('click', function (e) {
             e.preventDefault();
             deleteBook(parseInt(newDiv.id));

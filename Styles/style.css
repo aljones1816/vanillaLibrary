@@ -44,6 +44,7 @@
         max-width: 270px;
     }
     .modal {
+      max-width: 400px;
       margin: 200px auto;
     }
     
@@ -59,7 +60,8 @@
     opacity: 0;
     visibility: hidden;
     padding: 1%;
-    max-width: 480px;
+    width: 90%;
+    max-width: 400px;
     margin: 100px auto;
     background: #fff;
     border-radius: 10px;
@@ -155,20 +157,13 @@
 
   .delete-button {
     float: right;
-    background-color: #f44336; 
-    border: none;
-    color: white;
-    height: 2em;
-    width: 2em;
-    text-align: center;
-    text-decoration: none;
-    font-size: 16px;
-    margin: 1px;
-    border-radius:50%;
+    color: #f44336; 
+    font-size:2em;
+    cursor: pointer;
   }
 
   .delete-button:hover {
-    background-color: #ac2e25; 
+    color: #ac2e25; 
   }
 
   .update-button {
@@ -244,5 +239,10 @@ button {
 	top: 0px;
 	left: 3px;
 	color: #99a1a7;
+}
+
+.checker {
+  display: flex;
+  align-items: center;
 }
 
